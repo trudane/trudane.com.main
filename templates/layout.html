@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+  {% block head %}
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Name }} | lukxee.com</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/tailwind.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+    
+    <style>
+      .build-badge {
+        background-color: pink;
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+      }
+      
+      .build-badge__label, .build-badge__status {
+        display: inline-block;
+        padding: 0 6px 1px 6px;
+      }
+      
+      .build-badge__label {
+        background-color: #333;
+        color: #fff;
+      }
+      
+      .build-badge__status-success {
+        background-color: #4BAE4F;
+        color: #fff;
+      }
+      
+      .build-badge__status-warning {
+        background-color: #FEC006;
+        color: #000;
+      }
+      
+      .build-badge__status-error {
+        background-color: #F34235;
+        color: #fff;
+      }
+      
+      .build-badge__status-information {
+        background-color: #007ACC;
+        color: #fff;
+      }
+      
+      .build-badge__status-indeterminate {
+        background-color: #E0E0E0;
+        color: #000;
+      }      
+    </style>
+
+  </head>
+  {% endblock %}
+</head>
+{% block header %}
+<header>
+  
+
+</header>
+{% endblock %}
+
+<body class="bg-black">
+  {% block body %}
+  {% endblock %}
+</body>
+
+</html>
+{% block script %}
+{% endblock %}

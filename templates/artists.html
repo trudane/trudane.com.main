@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body class="bg-white dark:bg-black text-black dark:text-white"><div id="__next"><div style="position:fixed;z-index:9999"></div><div class="flex flex-col min-h-screen"><nav class="z-50 w-full flex justify-start items-center mx-auto max-w-4xl px-8 my-20"><a aria-label="home" class="focus:outline-none mr-10 transition duration-300 ease-in-out text-white hover:text-indigo-200 dark:hover:text-indigo-200" href="/">
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+  </svg>
+
+</a><a aria-label="projects" class="focus:outline-none mr-10 transition duration-300 ease-in-out text-white hover:text-indigo-200 dark:hover:text-indigo-200" href="/projects"><span>projects</span></a><a aria-label="blog" class="focus:outline-none mr-10 transition duration-300 ease-in-out text-white hover:text-indigo-200 dark:hover:text-indigo-200" href="/movies&tv"><span>movies & tv</span></a><a aria-label="blog" class="focus:outline-none mr-10 transition duration-300 ease-in-out text-white hover:text-indigo-200 dark:hover:text-indigo-200" href="/artists"><span>top artists</span></a>
+<div></button></div></nav>
+<div class="h-full lg:px-0 px-10"><div class="flex flex-col max-w-3xl mx-auto mb-16 sm:px-0"><div style="transition: opacity 400ms ease 0s, transform 400ms ease 0s; transform: none; opacity: 1;"></div><div style="transition: opacity 400ms ease 0s, transform 400ms ease 0s; transform: none; opacity: 1;"></div><div style="transition: opacity 400ms ease 0s, transform 400ms ease 0s; transform: none; opacity: 1;"><div>
+
+<h1 class="text-white text-5xl font-bold">Top Artists</h1><p class="text-lg font-semibold text-gray-400 dark:text-gray-400 max-w-sm mt-2">My top artists of this month from spotify</p>
+
+<div class="pt-5">
+<!--
+{% for artists in data["topartists"]["artist"] %}
+<p class="text-white">{{artists["@attr"]["rank"]}}</p>
+<p class="text-white">{{artists["name"]}}</p>
+<p class="text-white">{{artists["image"][2]["#text"]}}</p>
+{% endfor %}
+-->
+
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead class="bg-black border-b">
+            <tr>
+              <th scope="col" class="text-xl font-medium text-white px-6 py-4 text-left">
+                #
+              </th>
+              <th scope="col" class="text-md font-medium text-white px-6 py-4 text-left">
+                Name
+              </th>
+              <!--<th scope="col" class="text-md font-medium text-white px-6 py-4 text-left">
+                
+              </th>-->
+            </tr>
+          </thead>
+          <tbody>
+            {% for artists in data["topartists"]["artist"] %}
+            <tr class="bg-black border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-4xl font-bold text-white">{{artists["@attr"]["rank"]}}</td>
+              <td class="text-md text-white font-light px-6 py-4 whitespace-nowrap">
+                {{artists["name"]}}
+              </td>
+              <!--<td class="text-xl text-white font-light px-12 py-8 whitespace-nowrap">
+                <img class="h-32" src="{{artists["image"][2]["#text"]}}">
+              </td>-->
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js"
+  integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
